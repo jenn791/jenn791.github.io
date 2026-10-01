@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jennifer Ugwoke | Cloud Security Analyst</title>
+  <meta name="description" content="Jennifer Ugwoke - Cloud Security Analyst specializing in AWS, IAM, Terraform, cloud security and cybersecurity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">JU</a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="home" class="hero">
+      <div class="container hero-container">
+
+        <div class="hero-content">
+          <h1>Jennifer Ugwoke</h1>
+          <h2>Cloud Security Analyst</h2>
+          <p class="hero-role">AWS &nbsp;|&nbsp; IAM &nbsp;|&nbsp; Cloud Automation &nbsp;|&nbsp; Networking &nbsp; |&nbsp; Terraform</p>
+          <p class="hero-description">
+            Designing and securing cloud environments with a focus on resilience, automation, least-privilege access, and practical security controls
+          <div class="hero-buttons">
+            <a href="#projects" class="btn primary-btn">View My Projects</a>
+            <a href="https://github.com/jenn791" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-image-frame">
+            <img src="profile.jpg" alt="Jennifer Ugwoke, Cloud Security Analyst" width="848" height="915"
+                 onerror="this.remove(); this.parentNode.classList.add('no-photo');">
+            <span class="initials" aria-hidden="true">JU</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-heading"><h2>About</h2></div>
+        <div class="about-content">
+          <div class="about-quote">
+            <p>"Security is not a product, but a process and I am committed to making that process exceptional"<div class="."></div></p>
+          </div>
+          <div class="about-text">
+            <p>I am a resourceful cybersecurity professional with a hands-on approach to designing and implementing robust security solutions in AWS and Azure environments.</p>
+            <p>My expertise spans cloud architecture, threat detection, vulnerability management, and incident response.</p>
+            <p>Driven by intellectual curiosity and a deep commitment to protecting digital infrastructure, I approach every security challenge with precision, analytical rigour, and a continuous learning mindset.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Projects</h2>
+          <p>Practical cloud and cybersecurity projects focused on building secure and resilient infrastructure.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 1 -->
+          <article class="project-card">
+            <h3>Multi-Region Resilient Platform Architecture on AWS</h3>
+            <p class="project-summary">TradeCore Africa's platform ran on a single EC2 instance with no regional redundancy, ahead of a Tier-1 bank partnership that required 99.95% uptime, a 15-minute recovery time and a 5-minute recovery point. This project took it from requirements to a documented, tested-by-design, bank-ready architecture.</p>
+            <h4>What was done</h4>
+            <ul class="project-done">
+              <li>Translated each business requirement into an architecture constraint and recorded eight architecture decisions, with their trade-offs.</li>
+              <li>Designed a multi-AZ primary region in af-south-1 on ECS Fargate and Aurora PostgreSQL, with a pilot-light disaster recovery region.</li>
+              <li>Secured the design with four customer-managed KMS keys, network isolation, least-privilege IAM, WAF, CloudTrail and Config.</li>
+              <li>Built the primary region as reusable Terraform modules covering networking, compute, database, cache, storage, security and monitoring.</li>
+              <li>Planned the validation: a 10× load test, AZ and database failure experiments, and a timed DR failover with an RPO check.</li>
+            </ul>
+            <div class="project-tags">
+              <span>AWS</span><span>Cloud Architecture</span><span>High Availability</span><span>Disaster Recovery</span>
+            </div>
+            <p class="project-links">
+              <a href="https://github.com/IsiakaOladayo/archVault-infrastructure" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+              <a href="projects/AWS_First_Project.pdf" target="_blank" rel="noopener" class="project-link">Project deck (PDF)</a>
+            </p>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card">
+            <h3>Cloud Infrastructure and FinOps Architecture</h3>
+            <p class="project-summary">A secure, observable deployment for TradeCore Africa's 14-day pre-audit window ahead of an institutional banking review, held to a hard $25 AWS budget. The aim was to spend only where it creates application value and automate governance before provisioning.</p>
+            <h4>What was done</h4>
+            <ul class="project-done">
+              <li>Deployed a containerised Node.js API on ECS Fargate behind an ALB with ACM TLS, a React frontend on Amplify, Cognito for identity and a private RDS PostgreSQL database.</li>
+              <li>Removed the NAT Gateway cost (about $32.40 per AZ each month) by running ECS in public subnets, with security groups allowing only ALB-to-ECS and ECS-to-RDS traffic, recorded as an accepted decision.</li>
+              <li>Built a keyless GitHub Actions pipeline using OIDC, with staging, a manual approval gate and production promotion. A rollback drill restored traffic in 2m 34s.</li>
+              <li>Set budget alerts at 50% and 90%, five CloudWatch alarms routed through SNS to Slack, and scheduled staging to scale to zero overnight.</li>
+              <li>Wrote the teardown and post-funding plan. Adjusted net cost came to $8.32 a month.</li>
+            </ul>
+            <div class="project-tags">
+              <span>AWS</span><span>Cloud Infrastructure</span><span>FinOps</span><span>Cloud Security</span>
+            </div>
+            <p class="project-links">
+              <a href="https://github.com/IsiakaOladayo/tradecore-project2" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+              <a href="projects/AWS_Second_Project.pdf" target="_blank" rel="noopener" class="project-link">Project deck (PDF)</a>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-heading"><h2>Skills</h2></div>
+        <div class="skills-grid">
+
+          <div class="skill-category">
+            <h3>Cloud &amp; Infrastructure</h3>
+            <ul>
+              <li>AWS</li><li>Microsoft Azure</li><li>Cloud Architecture</li><li>Cloud Infrastructure</li><li>Terraform</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Cloud Security</h3>
+            <ul>
+              <li>Cloud Security</li><li>Identity &amp; Access Management</li><li>Threat Detection</li><li>Vulnerability Management</li><li>Incident Response</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Security &amp; Compliance</h3>
+            <ul>
+              <li>Information Security</li><li>Security Controls</li><li>PCI DSS</li><li>ISO/IEC 27001</li><li>Risk Management</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Security Automation</h3>
+            <ul>
+              <li>AWS Lambda</li><li>Amazon CloudWatch</li><li>Amazon EventBridge</li><li>Step Functions</li><li>Security Monitoring</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section id="certifications" class="section certifications-section">
+      <div class="container">
+        <div class="section-heading"><h2>Certifications &amp; Training</h2></div>
+        <div class="certifications-grid">
+
+          <div class="certification-card">
+            <h3>Microsoft Azure Security Engineer</h3>
+            <p>AZ-500</p>
+            <span class="cert-year">2024</span>
+          </div>
+
+          <div class="certification-card">
+            <h3>Certified in Cybersecurity</h3>
+            <p>ISC² CC</p>
+            <span class="cert-year">2024</span>
+          </div>
+
+          <div class="certification-card">
+            <h3>AWS Certified Security Specialist</h3>
+            <p>AWS Security Training</p>
+            <span class="cert-year">2024</span>
+          </div>
+
+          <div class="certification-card">
+            <h3>Identity and Access Management</h3>
+            <p>IAM Training</p>
+            <span class="cert-year">2024</span>
+          </div>
+
+          <div class="certification-card">
+            <h3>Cybersecurity Soft Skills</h3>
+            <p>Professional Training</p>
+            <span class="cert-year">2024</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-content">
+          <h2>Let's Connect</h2>
+          <p>Interested in cloud security, cybersecurity, collaboration, or discussing a project? I'd love to connect.</p>
+          <div class="contact-links">
+            <a href="mailto:jugwoke94@gmail.com" class="contact-link">Email</a>
+            <a href="https://github.com/jenn791" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/jennifer-ugwoke-30b9082aa/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 Jennifer Ugwoke</p>
+      <p>Cloud Security Analyst</p>
+    </div>
+  </footer>
+
+</body>
+</html>
