@@ -127,6 +127,28 @@
             </p>
           </article>
 
+          <!-- PROJECT 3 -->
+          <article class="project-card">
+            <h3>VaultCloud: Cloud Security Assessment, Remediation and Independent Validation</h3>
+            <p class="project-summary">A deliberately misconfigured startup AWS environment (us-east-1, 18 primary resources, no prior security function), assessed, hardened and independently validated against realistic attack scenarios. A Prowler baseline scan returned 188 findings, including 23 Critical and 38 High, traced to four root causes: unrestricted network ingress, a publicly accessible unencrypted database, AdministratorAccess on both workload roles, and an AWS key exposed in Terraform source.</p>
+            <h4>What was done</h4>
+            <ul class="project-done">
+              <li>Cleared all Critical and High container vulnerabilities (232 Critical and 1,978 High CVEs down to zero) by rebuilding the API image as a distroless multi-stage build and removing 8 hardcoded secrets from the Dockerfile.</li>
+              <li>Added a Trivy scan to the CI/CD pipeline that blocks merges on unaccepted Critical or High CVEs, with 21 remaining OS-level CVEs formally risk-accepted with a reachability justification.</li>
+              <li>Replaced AdministratorAccess on the workload roles with a scoped least-privilege policy, then proved it with a trust-policy test and a permission-boundary test, where simulated destructive and escalation actions all returned implicitDeny.</li>
+              <li>Built an event-driven, self-healing S3 response: EventBridge detects Block Public Access being disabled and a Lambda restores it, with detection-to-remediation in 9 seconds across 5 of 5 successful invocations.</li>
+              <li>Redesigned the network to Zero Trust, restricting the app security group to port 5000 and the database security group to port 5432 from the app only, and confirmed it with CLI queries and Reachability Analyzer.</li>
+              <li>Independently red-team validated each fix, and tracked one finding openly: the original public database instance, still awaiting retirement.</li>
+            </ul>
+            <div class="project-tags">
+              <span>AWS</span><span>Vulnerability Management</span><span>IAM</span><span>Security Automation</span><span>Zero Trust</span>
+            </div>
+            <p class="project-links">
+              <a href="https://github.com/IsiakaOladayo/breach-zone" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub</a>
+              <a href="projects/VaultCloud_Presentation.pdf" target="_blank" rel="noopener" class="project-link">Project deck (PDF)</a>
+            </p>
+          </article>
+
         </div>
       </div>
     </section>
